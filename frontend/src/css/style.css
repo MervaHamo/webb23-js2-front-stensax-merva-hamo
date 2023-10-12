@@ -1,0 +1,95 @@
+/* Stilar för hela sidan */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #333;
+}
+
+/* Stilar för namnformulär */
+#nameForm {
+    margin-top: 20px;
+}
+
+#name-label {
+    font-weight: bold;
+}
+
+#playerName {
+    padding: 5px;
+}
+
+/* Stilar för spelet */
+#game {
+    margin-top: 20px;
+    display: none;
+}
+
+#score {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#choices {
+    display: flexbox;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+button img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Stilar för resultatet */
+#result {
+    margin-top: 20px;
+    display: none;
+}
+
+#resultText {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#playerChoice,
+#computerChoice {
+    margin-top: 10px;
+}
+
+/* Stilar för highscore-listan */
+.high-score {
+    margin-top: 20px;
+}
+
+#highScoreboard {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#highScoreList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#highScoreList li {
+    margin: 10px 0;
+    font-size: 18px;
+}

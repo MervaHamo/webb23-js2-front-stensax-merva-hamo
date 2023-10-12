@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sten-sax-påse-spel</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+    <h1>Sten-sax-påse</h1>
+
+    <!-- Namnformulär -->
+    <form id="nameForm">
+        <label for="playerName" id="name-label">Ange namn:</label>
+        <input type="text" id="playerName">
+        <button type="submit" id="startButton">Starta spelet</button>
+
+    </form>
+
+    <!-- Spelet -->
+    <div id="game" style="display: none;">
+        <h2>Player: <span id="playerNameDisplay"></span></h2>
+        <div id="score">
+            <p>Point: <span id="playerScore">0</span></p>
+        </div>
+        <div id="choices">
+            <button id="rockButton"><img alt="ROCK ✊🏻 "></button>
+            <button id="scissorsButton"><img alt="SCISSOR ✌️🏻 "></button>
+            <button id="paperButton"><img alt="PAPER ✋🏻 "></button>
+        </div>
+        <div id="result" style="display: none;">
+            <h3 id="resultText"></h3>
+            <div id="playerChoice"></div>
+            <div id="computerChoice"></div>
+            <button id="restartButton">Starta igen</button>
+        </div>
+    </div>
+
+     <!-- JavaScript-fil -->
+     <script src="main.js"></script>
+   
+    <!-- Highscore-lista -->
+    <div class="container">
+        <div class="high-score">
+            <div id="highScoreboard">
+                <h3>High Score-board</h3>
+                <h4>Top 5 score</h4>
+                <ul id="highScoreList"></ul>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+</html>
+
+
