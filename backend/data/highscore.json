@@ -1,22 +1,22 @@
 [
   {
-    "playerName": "Alice",
-    "currentScore": 10
+    "playerName": "Sara",
+    "currentScore": 9
   },
   {
-    "playerName": "Bob",
-    "currentScore": 8
+    "playerName": "Ecrin",
+    "currentScore": 7
   },
   {
-    "playerName": "Jeremie",
-    "currentScore": 6
-  },
-  {
-    "playerName": "Jeremie",
-    "currentScore": 6
-  },
-  {
-    "playerName": "Charlie",
+    "playerName": "Zuhra",
     "currentScore": 5
+  },
+  {
+    "playerName": "Suzane",
+    "currentScore": 3
+  },
+  {
+    "playerName": "Anna",
+    "currentScore": 3
   }
 ]

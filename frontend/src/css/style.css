@@ -1,87 +1,102 @@
-/* Stilar för hela sidan */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Comic Sans MS", cursive; 
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #ffecb3; 
     margin: 0;
     padding: 0;
 }
 
+
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 450px;
+    margin: 60px auto; 
+    padding: 95px;
     background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 150px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
-    color: #333;
+    color: #ff5733; 
+    font-size: 36px;
+    font-style: italic;
 }
 
-/* Stilar för namnformulär */
+
 #nameForm {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #name-label {
     font-weight: bold;
+    font-size: 20px;
+    color: #ff5733; 
+    text-decoration: underline; 
 }
 
 #playerName {
-    padding: 5px;
+    padding: 10px;
+    font-size: 18px;
 }
 
-/* Stilar för spelet */
 #game {
-    margin-top: 20px;
+    margin-top: 30px;
     display: none;
 }
 
 #score {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 30px;
+    color: #ff5733; 
 }
 
 #choices {
-    display: flexbox;
-    justify-content: space-between;
-    margin-top: 100px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 0px; 
 }
 
 button img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+    border: none; 
+    margin: 10px; 
 }
 
-/* Stilar för resultatet */
+
 #result {
-    margin-top: 20px;
+    margin-top: 30px;
     display: none;
 }
 
 #resultText {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
+    color: #ff5733; 
+    text-decoration: underline; 
 }
 
 #playerChoice,
 #computerChoice {
-    margin-top: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #ff5733; 
 }
 
-/* Stilar för highscore-listan */
 .high-score {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #highScoreboard {
     background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
+    margin-top: -15px;
+    color: #ff5733; 
+    padding: 50px;
+    border-radius: 90px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
 }
 
 #highScoreList {
@@ -90,6 +105,7 @@ button img {
 }
 
 #highScoreList li {
-    margin: 10px 0;
-    font-size: 18px;
+    margin: 15px 0;
+    font-size: 15px;
+    font-weight: bold;
 }

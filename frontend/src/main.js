@@ -26,6 +26,7 @@ let highScoreData = 5;
 let highScores = [];
 
 
+
 // Funktion för att visa spelet           
 function showGameScreen() {
     playerName.style.display = "none";
@@ -76,9 +77,9 @@ function playRound(playerChoice) {
         highScores.sort((a, b) => b.currentScore - a.currentScore);
         highScores = highScores.slice(0, 5);
         consecutiveWins++;
+
     } else {
-        result = "The winner is the computer!";
-        result = "The winner is the computer!";
+    result = "The winner is the computer!";    
     computerPoints++;
     consecutiveWins = 0; // Återställ antal vinster i rad vid förlust
     playerPoints = 0;   // Återställ spelarens poäng vid förlust
@@ -169,13 +170,17 @@ function updateAndDisplayHighScores(data) {
 }
 
 // Function to initialize and load high scores
-function initializeHighScoreList() {
-    fetch("/api/highscore")
-        .then((response) => response.json())
+async function initializeHighScoreList() {
+    console.log("hejsan");
+    await fetch("http://localhost:3000/api/highscore",{method: "GET"})
+        .then( async (response) => await response.json() )
         .then((data) => {
+            console.log(data)
             updateAndDisplayHighScores(data); // Update and display high scores
         })
         .catch((error) => {
+            console.log("error Merva")
+
             console.error("Error fetching high score data:", error); // Log the error
         });
 }
@@ -222,7 +227,7 @@ function saveHighScore(highScoreData, callback) {
 
 
 highScoreData = { playerName: playerNameText, currentScore: playerPoints };    
-saveHighScore(highScoreData, initializeHighScoreList);
+//saveHighScore(highScoreData, initializeHighScoreList);
 
 
 // Ladda high score-listan vid sidans laddning
