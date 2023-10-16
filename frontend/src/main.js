@@ -26,7 +26,6 @@ let highScoreData = 5;
 let highScores = [];
 
 
-
 // Funktion för att visa spelet           
 function showGameScreen() {
     playerName.style.display = "none";
@@ -88,7 +87,7 @@ function playRound(playerChoice) {
     updateScores();
     showResultScreen(result);
 
-    if (consecutiveWins >= 3) {
+    if (consecutiveWins >= 5) {
         let finalResult = "Congratulations! You win the game! 🎉";
         showResultScreen(finalResult);
         rockButton.disabled = true;

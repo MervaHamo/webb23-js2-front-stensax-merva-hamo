@@ -1,5 +1,9 @@
 [
   {
+    "playerName": "Zuhra",
+    "currentScore": 11
+  },
+  {
     "playerName": "Sara",
     "currentScore": 9
   },
@@ -8,15 +12,11 @@
     "currentScore": 7
   },
   {
+    "playerName": "Fatmeh",
+    "currentScore": 6
+  },
+  {
     "playerName": "Zuhra",
     "currentScore": 5
-  },
-  {
-    "playerName": "Suzane",
-    "currentScore": 3
-  },
-  {
-    "playerName": "Anna",
-    "currentScore": 3
   }
 ]
