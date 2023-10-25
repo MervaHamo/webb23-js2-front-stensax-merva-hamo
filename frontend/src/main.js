@@ -58,13 +58,22 @@ function getRandomChoice() {
 }
 
 // Funktion för att spela en omgång
+// Lägg till en flagga för att indikera om spelet är över
+let isGameOver = false;
+
+
 function playRound(playerChoice) {
+
+    if (isGameOver) {
+        return;
+    }
+
     const computerChoice = getRandomChoice();
 
     let result;
     if (playerChoice === computerChoice) {
         result = "Oavgjort! 👀";
-        consecutiveWins = 0; 
+        consecutiveWins = 0;
     } else if (
         (playerChoice === "rock" && computerChoice === "scissors") ||
         (playerChoice === "scissors" && computerChoice === "paper") ||
@@ -76,45 +85,78 @@ function playRound(playerChoice) {
         highScores.sort((a, b) => b.currentScore - a.currentScore);
         highScores = highScores.slice(0, 5);
         consecutiveWins++;
+    
+        // Uppdatera poängen
+        updateScores();
+    
+        if (consecutiveWins >= 3) {
+            let finalResult = "Congratulations! You win the game! 🎉";
+            showResultScreen(finalResult);
+            rockButton.disabled = true;
+            scissorsButton.disabled = true;
+            paperButton.disabled = true;
+            
+            computerChoiceElement.style.display = "block";
+            playerChoiceElement.style.display = "block";
+    
+            // Spara high score-data när spelet är över
+            const highScoreData = { playerName: playerNameText, currentScore: playerPoints };
+            saveHighScore(highScoreData, function () {
+                initializeHighScoreList();
+            });
 
+
+    
+            // Markera att spelet är över
+            isGameOver = true;
+        }
+        
     } else {
-    result = "The winner is the computer!";    
-    computerPoints++;
-    consecutiveWins = 0; // Återställ antal vinster i rad vid förlust
-    playerPoints = 0;   // Återställ spelarens poäng vid förlust
+        result = "The winner is the computer!";
+        computerPoints++;
+        consecutiveWins = 0;
+        playerPoints = 0;
+    
+        // Markera att spelet är över när datorn vinner
+        isGameOver = true;
+    
+    
+        // Uppdatera poängen
+        updateScores();
+        showResultScreen(result);
     }
-
-    updateScores();
-    showResultScreen(result);
+    
+    
 
     if (consecutiveWins >= 5) {
         let finalResult = "Congratulations! You win the game! 🎉";
         showResultScreen(finalResult);
         rockButton.disabled = true;
         scissorsButton.disabled = true;
-        paperButton.disabled = true;
-        restartButton.style.display = "block";
+        paperButton.disabled = true;;
         computerChoiceElement.style.display = "none";
         playerChoiceElement.style.display = "none";
-
+        
         // Spara high score-data när spelet är över
         const highScoreData = { playerName: playerNameText, currentScore: playerPoints };
         saveHighScore(highScoreData, function () {
             initializeHighScoreList();
         });
     } else {
-        playerChoiceElement.textContent = `Spelare: ${playerChoice}`;
-        computerChoiceElement.textContent = `Dator: ${computerChoice}`;
+
         playerChoiceElement.style.display = "block";
         computerChoiceElement.style.display = "block";
     }
 }
 
-// Funktion för att starta om spelet
 function restartGame() {
     playerPoints = 0;
     computerPoints = 0;
-    consecutiveWins = 0; // Återställ antal vinster i rad
+    consecutiveWins = 0;
+    
+    // Återställ eventuell flagga för att markera att spelet är över
+    isGameOver = false;
+
     updateScores();
     restartButton.style.display = "none";
     rockButton.disabled = false;
@@ -123,6 +165,7 @@ function restartGame() {
     showGameScreen();
     initializeHighScoreList(); 
 }
+
 
 // Lyssna på formuläret för att starta spelet
 nameForm.addEventListener("submit", function (event) {
@@ -151,8 +194,7 @@ paperButton.addEventListener("click", function () {
     playRound("paper");
 });
 
-// Lyssna på starta om-knappen
-restartButton.addEventListener("click", function () {
+nextRoundButton.addEventListener("click", function () {
     restartGame();
 });
 

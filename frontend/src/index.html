@@ -15,7 +15,7 @@
         <label for="playerName" id="name-label">Ange namn:</label>
         <input type="text" id="playerName">
         <button type="submit" id="startButton">Starta spelet</button>
-
+        <button id="restartButton" style="display: none;">Starta igen</button>
     </form>
 
     <!-- Spelet -->
@@ -25,21 +25,21 @@
             <p>Point: <span id="playerScore">0</span></p>
         </div>
         <div id="choices">
-            <button id="rockButton"><img alt="ROCK ✊🏻 "></button>
-            <button id="scissorsButton"><img alt="SCISSOR ✌️🏻 "></button>
-            <button id="paperButton"><img alt="PAPER ✋🏻 "></button>
+            <button id="rockButton">Sten</button>
+            <button id="scissorsButton">Sax</button>
+            <button id="paperButton">Påse</button>
         </div>
-        <div id="result" style="display: none;">
+        <div id="result" style="display: block;">
             <h3 id="resultText"></h3>
             <div id="playerChoice"></div>
             <div id="computerChoice"></div>
-            <button id="restartButton">Starta igen</button>
+            <button id="nextRoundButton">Spela igen</button>
         </div>
     </div>
 
-     <!-- JavaScript-fil -->
-     <script src="main.js"></script>
-   
+    <!-- JavaScript-fil -->
+    <script src="main.js"></script>
+
     <!-- Highscore-lista -->
     <div class="container">
         <div class="high-score">
@@ -50,8 +50,5 @@
         </div>
     </div>
 
-   
 </body>
 </html>
-
-
