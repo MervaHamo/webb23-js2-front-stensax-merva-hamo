@@ -213,7 +213,7 @@ function updateAndDisplayHighScores(data) {
 // Function to initialize and load high scores
 async function initializeHighScoreList() {
     console.log("hejsan");
-    await fetch("http://localhost:3000/api/highscore",{method: "GET"})
+    await fetch("http://localhost:3005/api/highscore",{method: "GET"})
         .then( async (response) => await response.json() )
         .then((data) => {
             console.log(data)
