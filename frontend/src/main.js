@@ -54,7 +54,10 @@ function updateScores() {
 function getRandomChoice() {
     const choices = ["rock", "scissors", "paper"];
     const randomIndex = Math.floor(Math.random() * choices.length);
-    return choices[randomIndex];
+    let cpuChoice=choices[randomIndex];
+    document.getElementById("cpuHistory").innerHTML=cpuChoice
+    console.log(cpuChoice);
+    return cpuChoice
 }
 
 // Funktion för att spela en omgång
@@ -63,6 +66,7 @@ let isGameOver = false;
 
 
 function playRound(playerChoice) {
+    document.getElementById("playerHistory").innerHTML=playerChoice
 
     if (isGameOver) {
         return;
@@ -247,7 +251,7 @@ nameForm.addEventListener("submit", function (event) {
 
 
 function saveHighScore(highScoreData, callback) {
-    fetch("http://localhost:3000/api/highscore2", {
+    fetch("http://localhost:3005/api/highscore2", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
